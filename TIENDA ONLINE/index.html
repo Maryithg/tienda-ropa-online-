@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Online</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="pagina.css">
+    
+</head>
+
+<body>
+<div class="menu container">
+            <a href="#" class="logo">Woman</a>
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <i class="bi bi-list"></i>
+            </label>
+
+            <div>
+                <ul>
+                    <li class="submenu">
+                        <header id="header">
+                            <img class="carrito" src="carrito-de-compras.png" alt="carrito">
+                            <span id="num-articulos" class="num-articulos">0</span>
+                        </header>
+                        <div id="carrito">
+                            <table id="lista-carrito">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <span></span>
+                                        <th>Nombre</th>
+                                        <th>precio</th>
+                                        <th>cantidad</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+
+                            </table>
+                            <a href="#" id="vaciar-carrito" class="btn-2">Vaciar carrito</a>
+                            <div>
+                                <p>Total: <span id="total-sum">$0.00</span></p>
+                            </div>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    <header class="header">
+        
+        <div class="header-content container">
+            <div class="header-img">
+                <img src="image-removebg-preview.png" alt="">
+            </div>
+            <div class="header-txt">
+                <h1>Woman</h1>
+                <p>¡Las mejores prendas las encuentras Aquí!</p>
+                <a href="#" class="btn-1">informacion</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="ofert container">
+        <div class="ofert-1">
+            <div class="ofert-img">
+                <img src="producto1.webp" alt="">
+            </div>
+            <div class="ofert-txt">
+                <h3>producto 1</h3>
+                <a href="#" class="btn-2">informacion</a>
+            </div>
+        </div>
+        <div class="ofert-1">
+            <div class="ofert-img">
+                <img src="producto2.webp" alt="">
+            </div>
+            <div class="ofert-txt">
+                <h3>producto 2</h3>
+                <a href="#" class="btn-2">informacion</a>
+            </div>
+        </div>
+        <div class="ofert-1">
+            <div class="ofert-img">
+                <img src="producto3.webp" alt="">
+            </div>
+            <div class="ofert-txt">
+                <h3>producto 3</h3>
+                <a href="#" class="btn-2">informacion</a>
+            </div>
+        </div>
+    </section>
+    <main class="products container" id="lista-1">
+        <h2>productos</h2>
+
+        <div class="product-content">
+            <div class="product">
+                <img src="uno.webp" alt="">
+                <div class="product-txt">
+                    <h3>Shorts Marfil Miniprint</h3>
+                    <p>Encuentra tu talla!</p>
+                    <p class="precio">$200</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="1">agregar al carrito</a>
+                </div>
+            </div>
+            <div class="product color">
+                
+                <img src="dos.webp" alt="">
+                <div class="product-txt">
+                    <h3>Camisa Manga Larga Marfil Miniprint</h3>
+                    <p>Encuentra tu talla!</p>
+                    <p class="precio">$200</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="1">agregar al carrito</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="tres.webp" alt="">
+                <div class="product-txt">
+                    <h3>Falda Verde Básico</h3>
+                    <p>Encuentra tu talla!</p>
+                    <p class="precio">$100</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="1">agregar al carrito</a>
+                </div>
+            </div>
+            <div class="product color">
+                <img src="cuatro.webp" alt="">
+                <div class="product-txt">
+                    <h3>Pantalón Marfil Básico</h3>
+                    <p>Encuentra tu talla!</p>
+                    <p class="precio">$200</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="1">agregar al carrito</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="cinco.webp" alt="">
+                <div class="product-txt">
+                    <h3>Falda Corta Con Cierre Negro Básico</h3>
+                    <p>Encuentra tu talla!</p>
+                    <p class="precio">$200</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="1">agregar al carrito</a>
+                </div>
+            </div>
+            <div class="product color">
+                <img src="seis.webp" alt="">
+                <div class="product-txt">
+                    <h3>Camiseta Crop Azul Ilustración</h3>
+                    <p>Encuentra tu talla!</p>
+                    <p class="precio">$200</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="1">agregar al carrito</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="siete.webp" alt="">
+                <div class="product-txt">
+                    <h3>Camiseta Blanco Texto</h3>
+                    <p>Encuentra tu talla!</p>
+                    <p class="precio">$200</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="1">agregar al carrito</a>
+                </div>
+            </div>
+            <div class="product color">
+                <img src="ocho.webp" alt="">
+                <div class="product-txt">
+                    <h3>Body Manga Larga Blanco Cortes</h3>
+                    <p>Encuentra tu talla!</p>
+                    <p class="precio">$200</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="1">agregar al carrito</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="nueve.webp" alt="">
+                <div class="product-txt">
+                    <h3>Jean Wide Leg Tiro Medio Azul Medio Básico</h3>
+                    <p>Encuentra tu talla!</p>
+                    <p class="precio">$200</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="1">agregar al carrito</a>
+                </div>
+            </div>
+            <div class="product color">
+                <img src="doce.webp" alt="">
+                <div class="product-txt">
+                    <h3>Joggers Café Texto</h3>
+                    <p>Encuentra tu talla!</p>
+                    <p class="precio">$200</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="1">agregar al carrito</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="diez.webp" alt="">
+                <div class="product-txt">
+                    <h3>Buzo Con Cierre Verde Texto</h3>
+                    <p>Encuentra tu talla!</p>
+                    <p class="precio">$200</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="1">agregar al carrito</a>
+                </div>
+            </div>
+            <div class="product color">
+                <img src="once.webp" alt="">
+                <div class="product-txt">
+                    <h3>Vestido Marfil Cortes</h3>
+                    <p>Encuentra tu talla!</p>
+                    <p class="precio">$200</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="1">agregar al carrito</a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content container">
+            <div class="link">
+                <h2>Woman</h2>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="carrito.js"></script>
+
+</body>
+
+</html>
