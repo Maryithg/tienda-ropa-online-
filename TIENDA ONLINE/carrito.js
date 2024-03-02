@@ -20,11 +20,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const productName = product.querySelector('h3').textContent; // Obtiene el nombre del producto
         const productPrice = parseFloat(product.querySelector('.precio').textContent.replace('$', '')); // Obtiene el precio del producto y lo convierte a número flotante
 
-        // Busca si el producto ya está en el carrito
-        const existingCartItem = Array.from(cartItemsContainer.children).find(row => row.querySelector('td:nth-child(2)').textContent === productName);
-
+        // Si el producto ya está en el carrito, aumentar la cantidad en 1
+        const existingCartItem = Array.from(cartItemsContainer.children).find(row => row.dataset.producto === productName);
         if (existingCartItem) {
-            // Si el producto ya está en el carrito, aumentar la cantidad en 1
             const quantityCell = existingCartItem.querySelector('.cantidad');
             let quantity = parseInt(quantityCell.textContent);
             quantity++;
@@ -35,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Crear la fila del carrito
             const row = document.createElement('tr');
+            row.dataset.producto = productName;
             row.innerHTML = `
                 <td><img src="${productImage}" width="50" alt="Producto"></td>
                 <td>${productName}</td>
@@ -65,15 +64,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Función para eliminar un producto del carrito
-    // Función para eliminar un producto del carrito
     function removeCartItem(event) {
         if (event.target.classList.contains('eliminar-item')) {
             const row = event.target.parentElement.parentElement;
-            const productPrice = parseFloat(row.querySelector('td:nth-child(3)').textContent.replace('$', '')); // Obtiene el precio del producto a eliminar
-            row.remove();
+            const productName = row.dataset.producto;
+            const productPrice = parseFloat(row.querySelector('.precio').textContent.replace('$', ''));
+            const quantity = parseInt(row.querySelector('.cantidad').textContent);
 
             // Restar el precio del producto eliminado del total
-            totalSum -= productPrice;
+            totalSum -= productPrice * quantity;
+
+            // Eliminar el elemento del carrito
+            row.remove();
 
             // Actualizar el número de artículos en el carrito
             updateCartItemCount();
@@ -85,16 +87,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Función para vaciar el carrito
     function emptyCart() {
-        while (cartItemsContainer.firstChild) {
-            cartItemsContainer.removeChild(cartItemsContainer.firstChild);
-        }
+        // Eliminar todos los elementos del carrito
+        cartItemsContainer.innerHTML = '';
 
         // Reiniciar la suma total
         totalSum = 0;
-        updateTotalSum();
 
         // Actualizar el número de artículos en el carrito
         updateCartItemCount();
+
+        // Actualizar el total del carrito
+        updateTotalSum();
     }
 
     // Agrega un event listener a cada botón "Agregar al carrito"
@@ -107,4 +110,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Agrega un event listener para el evento "click" en el botón para vaciar el carrito
     emptyCartButton.addEventListener('click', emptyCart);
-}); 
+});
