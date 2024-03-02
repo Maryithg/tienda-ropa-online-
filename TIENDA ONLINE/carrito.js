@@ -1,5 +1,5 @@
 // Espera a que el DOM esté completamente cargado
-document.addEventListener('DOMContentLoaded', function () { 
+document.addEventListener('DOMContentLoaded', function () {
     // Selecciona todos los botones "Agregar al carrito"
     const addToCartButtons = document.querySelectorAll('.agregar-carrito');
     // Selecciona el contenedor de los elementos del carrito
@@ -64,27 +64,21 @@ document.addEventListener('DOMContentLoaded', function () {
         totalSumSpan.textContent = `$${totalSum.toFixed(2)}`;
     }
 
- // Función para eliminar un producto del carrito
-function removeCartItem(event) {
-    if (event.target.classList.contains('eliminar-item')) {
-        const row = event.target.parentElement.parentElement;
-        const productPrice = parseFloat(row.querySelector('td:nth-child(3)').textContent.replace('$', '')); // Obtiene el precio del producto a eliminar
-        row.remove();
+    // Función para eliminar un producto del carrito
+    // Función para eliminar un producto del carrito
+    function removeCartItem(event) {
+        if (event.target.classList.contains('eliminar-item')) {
+            const row = event.target.parentElement.parentElement;
+            const productPrice = parseFloat(row.querySelector('td:nth-child(3)').textContent.replace('$', '')); // Obtiene el precio del producto a eliminar
+            row.remove();
 
-        // Restar el precio del producto eliminado del total
-        totalSum -= productPrice;
-        updateTotalSum();
-
-        // Actualizar el número de artículos en el carrito
-        updateCartItemCount();
-    }
-}
+            // Restar el precio del producto eliminado del total
+            totalSum -= productPrice;
 
             // Actualizar el número de artículos en el carrito
             updateCartItemCount();
 
-            // Restar el precio del producto eliminado del total
-            totalSum -= productPrice;
+            // Actualizar el total del carrito
             updateTotalSum();
         }
     }
@@ -113,4 +107,4 @@ function removeCartItem(event) {
 
     // Agrega un event listener para el evento "click" en el botón para vaciar el carrito
     emptyCartButton.addEventListener('click', emptyCart);
-});
+}); 
