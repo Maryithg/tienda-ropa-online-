@@ -64,12 +64,21 @@ document.addEventListener('DOMContentLoaded', function () {
         totalSumSpan.textContent = `$${totalSum.toFixed(2)}`;
     }
 
-    // Función para eliminar un producto del carrito
-    function removeCartItem(event) {
-        if (event.target.classList.contains('eliminar-item')) {
-            const row = event.target.parentElement.parentElement;
-            const productPrice = parseFloat(row.querySelector('td:nth-child(3)').textContent.replace('$', '')); // Obtiene el precio del producto a eliminar
-            row.remove();
+ // Función para eliminar un producto del carrito
+function removeCartItem(event) {
+    if (event.target.classList.contains('eliminar-item')) {
+        const row = event.target.parentElement.parentElement;
+        const productPrice = parseFloat(row.querySelector('td:nth-child(3)').textContent.replace('$', '')); // Obtiene el precio del producto a eliminar
+        row.remove();
+
+        // Restar el precio del producto eliminado del total
+        totalSum -= productPrice;
+        updateTotalSum();
+
+        // Actualizar el número de artículos en el carrito
+        updateCartItemCount();
+    }
+}
 
             // Actualizar el número de artículos en el carrito
             updateCartItemCount();
